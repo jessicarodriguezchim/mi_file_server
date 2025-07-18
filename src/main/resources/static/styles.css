@@ -1,0 +1,267 @@
+:root {
+    --primary-color: #30d5c8;  /* Turquesa */
+    --secondary-color: #20504f;  /* Verde azulado oscuro */
+    --success-color: #2d6a2d;  /* Verde oscuro (puedes mantener o cambiar) */
+    --danger-color: #008080;  /* Verde azulado */
+    --warning-color: #66cdaa;  /* Aqua marina claro */
+    --info-color: #20b2aa;  /* Turquesa medio */
+    --dark-color: #004d4d;  /* Turquesa oscuro */
+    --light-color: #d0f0f0;  /* Texto claro aqua */
+    --shadow-color: rgba(0, 77, 77, 0.4);
+}
+
+body {
+    background-color: #004d4d;  /* Fondo turquesa oscuro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease;
+    color: var(--light-color);
+}
+
+.bucketName, .text-muted, .allowedTypes .text {
+    color: var(--light-color) !important;
+    font-size: large;
+}
+
+.form-text {
+    color: var(--light-color) !important;
+}
+
+.d-block {
+    color: #2e8b87 !important;  /* Aqua marina oscuro */
+    font-size: medium;
+}
+
+.file-manager-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: #006666;  /* Fondo verde azulado */
+    box-shadow: 0 0.25rem 1.5rem 0 var(--shadow-color);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid #009a95;  /* Borde aqua */
+}
+
+.file-manager-container:hover {
+    box-shadow: 0 0.35rem 2rem 0 var(--shadow-color);
+}
+
+.upload-section {
+    background-color: var(--dark-color);
+    border: 1px dashed #20b2aa;  /* Borde turquesa */
+    transition: all 0.3s ease;
+    animation: pulse-border 2.5s infinite;
+}
+
+.upload-section:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(48, 213, 200, 0.15);
+    animation: none;
+}
+
+@keyframes pulse-border {
+    0% { border-color: #20b2aa; }
+    50% { border-color: var(--primary-color); }
+    100% { border-color: #20b2aa; }
+}
+
+.table th {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+    border-bottom: 2px solid var(--primary-color);
+    background-color: rgba(0, 77, 77, 0.2);
+}
+
+.table td {
+    border-bottom: 1px solid #20504f;
+    color: var(--primary-color);
+}
+
+.file-icon {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    border-radius: 4px;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: var(--primary-color);
+}
+
+.file-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(48, 213, 200, 0.6);
+}
+
+.file-icon i {
+    font-size: 1rem;
+}
+
+.file-type-badge {
+    font-size: 0.7rem;
+    padding: 0.35em 0.65em;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+    color: white;
+}
+
+.file-type-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(48, 213, 200, 0.6);
+    background-color: #20857f;  /* Turquesa más oscuro */
+}
+
+.file-row {
+    transition: all 0.3s ease;
+}
+
+.file-row:hover {
+    background-color: rgba(48, 213, 200, 0.15) !important;
+    transform: translateX(5px);
+}
+
+/* Estilo específico para el botón de upload */
+#uploadBtn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#uploadBtn:hover:not(:disabled) {
+    background-color: #20857f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(48, 213, 200, 0.4);
+}
+
+#uploadBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    animation: pulse-disabled 1.5s infinite;
+    background-color: #004d4d;
+}
+
+@keyframes pulse-disabled {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.4; }
+    100% { opacity: 0.6; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .file-manager-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .file-manager-container {
+        padding: 1rem;
+    }
+    .table tr {
+        border: 1px solid #009a95;
+    }
+}
+
+/* File type colors - tonos aqua/turquesa */
+.bg-pdf { background-color: var(--danger-color) !important; }
+.bg-image { background-color: #40e0d0 !important; }  /* Turquesa */
+.bg-doc { background-color: var(--primary-color) !important; }
+.bg-xls { background-color: #2d6a2d !important; }  /* Verde oscuro (opcional mantener) */
+.bg-ppt { background-color: #66cdaa !important; }  /* Aqua marina */
+.bg-zip { background-color: #004d4d !important; color: white !important; }
+.bg-default { background-color: var(--dark-color) !important; border: 1px solid #009a95; }
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #20857f;
+}
+
+/* Mejora para inputs y otros elementos */
+input, select {
+    background-color: #20504f;
+    border: 1px solid #009a95;
+    color: var(--light-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(48, 213, 200, 0.4);
+}
+
+/* Estilo para el mensaje "No se encontraron archivos" */
+.no-files-message {
+    color: #99d5d1;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.1rem;
+    background-color: rgba(0, 77, 77, 0.3);
+    border-radius: 4px;
+}
+
+.no-files-message i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    animation: pulse-icon 2s infinite;
+}
+
+@keyframes pulse-icon {
+    0% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.7; transform: scale(1); }
+}
+
+/* Opcional: Estilo para el contador de archivos */
+.file-count {
+    color: var(--light-color);
+    font-weight: 500;
+}

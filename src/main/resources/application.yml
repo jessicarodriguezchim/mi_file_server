@@ -1,0 +1,32 @@
+server:
+  port: 8096
+
+aws:
+  #access-key:
+  #secret-key:
+  s3:
+    bucket-name: mi-file-server-bucket-jessicarodriguez
+    region: us-east-2
+
+file:
+  upload:
+    max-size: 10MB
+    allowed-types: jpg,jpeg,png,pdf,txt,doc,docx
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  application:
+    name: file-server
+    admin:
+      enabled: false
+
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
+    software.amazon.awssdk: INFO
